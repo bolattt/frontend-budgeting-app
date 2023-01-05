@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import New from "./pages/New";
 import Transaction from "./pages/Transaction";
+import EditTransaction from "./pages/EditTransaction";
 
 function App() {
   return (
@@ -14,6 +15,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/transactions/new" element={<New />} />
           <Route path="/transactions/:index" element={<Transaction />} />
+          <Route
+            path="/transactions/:index/edit"
+            element={<EditTransaction />}
+          />
         </Routes>
       </Router>
     </div>

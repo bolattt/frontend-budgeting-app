@@ -26,6 +26,9 @@ export default function Home() {
                 Category
               </th>
               <th scope="col" className="px-6 py-3">
+                From
+              </th>
+              <th scope="col" className="px-6 py-3">
                 Amount
               </th>
             </tr>
@@ -49,6 +52,8 @@ export default function Home() {
                   <Link to={`/transactions/${i}`}>{t.name}</Link>
                 </td>
                 <td className="px-6 py-4">{t.category}</td>
+                <td className="px-6 py-4">{t.from}</td>
+
                 <td className="px-6 py-4">
                   {t.amount < 0
                     ? "-$" + t.amount.toString().slice(1)

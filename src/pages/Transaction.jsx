@@ -10,7 +10,7 @@ export default function Transaction() {
   const { index } = useParams();
   const navigate = useNavigate();
   const { data, loading, error } = useFetch(API + "/" + index);
-  console.log(API + "/" + index);
+
   function handleDelete() {
     axios
       .delete(API + "/" + index)
@@ -35,6 +35,9 @@ export default function Transaction() {
                 Category
               </th>
               <th scope="col" className="px-6 py-3">
+                From
+              </th>
+              <th scope="col" className="px-6 py-3">
                 Amount
               </th>
             </tr>
@@ -47,13 +50,10 @@ export default function Transaction() {
               >
                 {data.date}
               </th>
-              <td
-                className="px-6 py-4 
-"
-              >
-                {data.name}
-              </td>
+              <td className="px-6 py-4">{data.name}</td>
               <td className="px-6 py-4">{data.category}</td>
+              <td className="px-6 py-4">{data.from}</td>
+
               <td className="px-6 py-4">
                 {data.amount < 0
                   ? "-$" + data.amount.toString().slice(1)
@@ -72,9 +72,11 @@ export default function Transaction() {
           </Link>
         </div>
         <div>
-          <Button size="lg" gradientDuoTone="cyanToBlue">
-            Edit
-          </Button>
+          <Link to={`/transactions/${index}/edit`}>
+            <Button size="lg" gradientDuoTone="cyanToBlue">
+              Edit
+            </Button>
+          </Link>
         </div>
         <div>
           <Button
