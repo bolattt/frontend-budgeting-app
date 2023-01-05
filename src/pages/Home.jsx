@@ -1,5 +1,6 @@
 import React from "react";
 import useFetch from "../hooks/useFetch";
+import { Link } from "react-router-dom";
 
 const API = process.env.REACT_APP_LOCALHOST;
 // const API = process.env.REACT_APP_API_URL;
@@ -41,7 +42,12 @@ export default function Home() {
                 >
                   {t.date}
                 </th>
-                <td className="px-6 py-4">{t.name}</td>
+                <td
+                  className="px-6 py-4 underline decoration-solid
+"
+                >
+                  <Link to={`/transactions/${i}`}>{t.name}</Link>
+                </td>
                 <td className="px-6 py-4">{t.category}</td>
                 <td className="px-6 py-4">
                   {t.amount < 0

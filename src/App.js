@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import New from "./pages/New";
+import Transaction from "./pages/Transaction";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/transactions/new" element={<New />} />
+          <Route path="/transactions/:index" element={<Transaction />} />
         </Routes>
       </Router>
     </div>
