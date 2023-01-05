@@ -1,13 +1,23 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import { Button } from "flowbite-react";
+import axios from "axios";
 
 const API = process.env.REACT_APP_LOCALHOST;
 // const API = process.env.REACT_APP_API_URL;
 
 export default function Transaction() {
   const { index } = useParams();
+  const navigate = useNavigate();
   const { data, loading, error } = useFetch(API + "/" + index);
+  console.log(API + "/" + index);
+  function handleDelete() {
+    axios
+      .delete(API + "/" + index)
+      .then((data) => navigate("/"))
+      .catch((error) => console.log(error));
+  }
+
   console.log(data);
   return (
     <div className="transaction lg:w-3/5 md:w-4/5 sm:w-10/12 mx-auto">
@@ -52,22 +62,28 @@ export default function Transaction() {
             </tr>
           </tbody>
         </table>
-        <div className="flex flex-wrap gap-3 mt-5 mx-auto w-1/2 ">
-          <div>
+      </div>
+      <div className="flex flex-wrap gap-3 mt-5 mx-auto w-1/2 ">
+        <div>
+          <Link to="/">
             <Button size="lg" gradientDuoTone="purpleToBlue">
               Back
             </Button>
-          </div>
-          <div>
-            <Button size="lg" gradientDuoTone="cyanToBlue">
-              Edit
-            </Button>
-          </div>
-          <div>
-            <Button size="lg" gradientDuoTone="greenToBlue">
-              Delete
-            </Button>
-          </div>
+          </Link>
+        </div>
+        <div>
+          <Button size="lg" gradientDuoTone="cyanToBlue">
+            Edit
+          </Button>
+        </div>
+        <div>
+          <Button
+            size="lg"
+            gradientDuoTone="greenToBlue"
+            onClick={handleDelete}
+          >
+            Delete
+          </Button>
         </div>
       </div>
     </div>

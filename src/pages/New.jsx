@@ -4,7 +4,6 @@ import { Label, TextInput, Button } from "flowbite-react";
 import axios from "axios";
 
 const API = process.env.REACT_APP_LOCALHOST;
-// const API = process.env.REACT_APP_API_URL;
 
 export default function New() {
   const navigate = useNavigate();
