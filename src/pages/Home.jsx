@@ -3,8 +3,8 @@ import useFetch from "../hooks/useFetch";
 import { Link } from "react-router-dom";
 import { Spinner } from "flowbite-react";
 
-const API = process.env.REACT_APP_LOCALHOST;
-// const API = process.env.REACT_APP_API_URL;
+// const API = process.env.REACT_APP_LOCALHOST;
+const API = process.env.REACT_APP_API_URL;
 export default function Home() {
   const { data, error, loading } = useFetch(API);
   const total = data?.reduce((a, b) => a + b.amount, 0);

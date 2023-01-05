@@ -3,8 +3,7 @@ import useFetch from "../hooks/useFetch";
 import { Button } from "flowbite-react";
 import axios from "axios";
 
-const API = process.env.REACT_APP_LOCALHOST;
-// const API = process.env.REACT_APP_API_URL;
+const API = process.env.REACT_APP_API_URL;
 
 export default function Transaction() {
   const { index } = useParams();
