@@ -25,76 +25,78 @@ export default function EditTransaction() {
 
   return (
     <div className="new-transaction lg:w-1/3 md:w-3/5 sm:w-5/6  mx-auto">
-      <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-        <div>
-          <div className="mb-2 block">
-            <Label htmlFor="date" value="Date" />
+      {data && (
+        <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+          <div>
+            <div className="mb-2 block">
+              <Label htmlFor="date" value="Date" />
+            </div>
+            <TextInput
+              id="date"
+              type="date"
+              placeholder="name@flowbite.com"
+              required={true}
+              value={data.date}
+              onChange={handleChange}
+            />
           </div>
-          <TextInput
-            id="date"
-            type="date"
-            placeholder="name@flowbite.com"
-            required={true}
-            value={data.date}
-            onChange={handleChange}
-          />
-        </div>
 
-        <div>
-          <div className="mb-2 block">
-            <Label htmlFor="name" value="Name" />
+          <div>
+            <div className="mb-2 block">
+              <Label htmlFor="name" value="Name" />
+            </div>
+            <TextInput
+              id="name"
+              type="text"
+              required={true}
+              placeholder="coffee"
+              value={data.name}
+              onChange={handleChange}
+            />
           </div>
-          <TextInput
-            id="name"
-            type="text"
-            required={true}
-            placeholder="coffee"
-            value={data.name}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <div className="mb-2 block">
-            <Label htmlFor="amount" value="Amount" />
+          <div>
+            <div className="mb-2 block">
+              <Label htmlFor="amount" value="Amount" />
+            </div>
+            <TextInput
+              id="amount"
+              type="number"
+              placeholder="50"
+              required={true}
+              value={data.amount}
+              onChange={handleChange}
+            />
           </div>
-          <TextInput
-            id="amount"
-            type="number"
-            placeholder="50"
-            required={true}
-            value={data.amount}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <div className="mb-2 block">
-            <Label htmlFor="from" value="From" />
+          <div>
+            <div className="mb-2 block">
+              <Label htmlFor="from" value="From" />
+            </div>
+            <TextInput
+              id="from"
+              type="text"
+              placeholder="Starbucks"
+              required={true}
+              value={data.from}
+              onChange={handleChange}
+            />
           </div>
-          <TextInput
-            id="from"
-            type="text"
-            placeholder="Starbucks"
-            required={true}
-            value={data.from}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <div className="mb-2 block">
-            <Label htmlFor="category" value="Category" />
+          <div>
+            <div className="mb-2 block">
+              <Label htmlFor="category" value="Category" />
+            </div>
+            <TextInput
+              id="category"
+              type="text"
+              placeholder="food"
+              required={true}
+              value={data.category}
+              onChange={handleChange}
+            />
           </div>
-          <TextInput
-            id="category"
-            type="text"
-            placeholder="food"
-            required={true}
-            value={data.category}
-            onChange={handleChange}
-          />
-        </div>
 
-        <Button type="submit">Submit</Button>
-      </form>
+          <Button type="submit">Submit</Button>
+        </form>
+      )}
     </div>
   );
 }

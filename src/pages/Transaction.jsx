@@ -9,7 +9,7 @@ const API = process.env.REACT_APP_LOCALHOST;
 export default function Transaction() {
   const { index } = useParams();
   const navigate = useNavigate();
-  const { data, loading, error } = useFetch(API + "/" + index);
+  const { data, error } = useFetch(API + "/" + index);
 
   function handleDelete() {
     axios
@@ -43,23 +43,25 @@ export default function Transaction() {
             </tr>
           </thead>
           <tbody>
-            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-              <th
-                scope="row"
-                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-              >
-                {data.date}
-              </th>
-              <td className="px-6 py-4">{data.name}</td>
-              <td className="px-6 py-4">{data.category}</td>
-              <td className="px-6 py-4">{data.from}</td>
+            {data && (
+              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th
+                  scope="row"
+                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                >
+                  {data.date}
+                </th>
+                <td className="px-6 py-4">{data.name}</td>
+                <td className="px-6 py-4">{data.category}</td>
+                <td className="px-6 py-4">{data.from}</td>
 
-              <td className="px-6 py-4">
-                {data.amount < 0
-                  ? "-$" + data.amount.toString().slice(1)
-                  : "$" + data.amount}
-              </td>
-            </tr>
+                <td className="px-6 py-4">
+                  {data.amount < 0
+                    ? "-$" + data.amount.toString().slice(1)
+                    : "$" + data.amount}
+                </td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
@@ -88,6 +90,7 @@ export default function Transaction() {
           </Button>
         </div>
       </div>
+      {error && <div>Something went wrong!</div>}
     </div>
   );
 }

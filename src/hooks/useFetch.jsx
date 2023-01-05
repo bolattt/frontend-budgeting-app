@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function useFetch(url) {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -19,7 +19,7 @@ export default function useFetch(url) {
         setLoading(false);
         setError(error.message);
       });
-  }, []);
+  }, [url]);
 
   return { data, error, loading, setData };
 }
