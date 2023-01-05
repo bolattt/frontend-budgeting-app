@@ -7,12 +7,14 @@ import { Spinner } from "flowbite-react";
 const API = process.env.REACT_APP_API_URL;
 export default function Home() {
   const { data, error, loading } = useFetch(API);
-  const total = data ? data.reduce((a, b) => a + b.amount, 0) : 0;
+
   console.log(data);
 
   return (
     <div className="home mt-5 p-5">
-      <h1 className="text-3xl text-right mr-20 mb-10">Balance: ${total} </h1>
+      <h1 className="text-3xl text-right mr-20 mb-10">
+        Balance: ${data ? data.reduce((a, b) => a + b.amount, 0) : 0}{" "}
+      </h1>
       <div className="relative overflow-x-auto">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
