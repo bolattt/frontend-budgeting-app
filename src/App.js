@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import New from "./pages/New";
 import Transaction from "./pages/Transaction";
 import EditTransaction from "./pages/EditTransaction";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             path="/transactions/:index/edit"
             element={<EditTransaction />}
           />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </div>
