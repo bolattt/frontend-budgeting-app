@@ -101,6 +101,7 @@ export default function New() {
 
         <Button type="submit">Submit</Button>
       </form>
+
       {error && <div>Something went wrong!</div>}
     </div>
   );
