@@ -64,7 +64,7 @@ export default function Transaction() {
           </tbody>
         </table>
       </div>
-      <div className="flex flex-wrap gap-3 mt-5 mx-auto w-1/2 ">
+      <div className="flex flex-wrap gap-3 mt-5 mx-auto  justify-center ">
         <div>
           <Link to="/">
             <Button size="lg" gradientDuoTone="purpleToBlue">
