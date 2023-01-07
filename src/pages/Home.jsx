@@ -12,12 +12,12 @@ export default function Home() {
 
   return (
     <div className="home mt-5 p-5">
-      <h1 className="text-3xl text-right mr-20 mb-10">
+      <h1 className="text-3xl text-right mr-20 mb-10 dark:text-white">
         Balance: ${data ? data.reduce((a, b) => a + b.amount, 0) : 0}{" "}
       </h1>
       <div className="relative overflow-x-auto">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <thead className="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
+          <thead className="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-900 dark:text-gray-100 ">
             <tr>
               <th scope="col" className="px-6 py-3">
                 Date
