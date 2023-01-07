@@ -9,7 +9,7 @@ import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <div className="App h-screen  dark:bg-gray-700">
+    <div className="App h-screen  dark:bg-gray-700 relative">
       <Router>
         <Navbar />
         <Routes>

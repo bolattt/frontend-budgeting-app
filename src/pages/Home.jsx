@@ -68,12 +68,12 @@ export default function Home() {
           </tbody>
         </table>
         {error && <div>Something went wrong!</div>}
-        {loading && (
-          <div className="text-center mt-20">
-            <Spinner aria-label="Large spinner example" size="lg" />
-          </div>
-        )}
       </div>
+      {loading && (
+        <div className=" absolute text-center flex flex-col items-center justify-center h-full w-full top-0">
+          <Spinner aria-label="Large spinner example" size="lg" />
+        </div>
+      )}
     </div>
   );
 }
