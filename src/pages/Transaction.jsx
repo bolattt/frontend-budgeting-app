@@ -19,7 +19,7 @@ export default function Transaction() {
 
   console.log(data);
   return (
-    <div className="transaction lg:w-3/5 md:w-4/5 sm:w-10/12 mx-auto">
+    <div className=" transaction lg:w-3/5 md:w-4/5 sm:w-10/12 mx-auto">
       <div className="relative overflow-x-auto">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">

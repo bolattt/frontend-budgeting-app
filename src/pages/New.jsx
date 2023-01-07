@@ -30,7 +30,7 @@ export default function New() {
   }
 
   return (
-    <div className="new-transaction w-10/12 lg:w-1/3 md:w-3/5 sm:w-5/6  mx-auto">
+    <div className="new-transaction w-10/12 lg:w-1/3 md:w-3/5 sm:w-5/6  mx-auto pt-16  ">
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
         <div>
           <div className="mb-2 block">

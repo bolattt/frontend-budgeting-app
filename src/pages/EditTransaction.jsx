@@ -24,7 +24,7 @@ export default function EditTransaction() {
   }
 
   return (
-    <div className="new-transaction lg:w-1/3 md:w-3/5 sm:w-5/6  mx-auto ">
+    <div className="new-transaction lg:w-1/3 md:w-3/5 sm:w-5/6  mx-auto pt-20 ">
       {data && (
         <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
           <div>
