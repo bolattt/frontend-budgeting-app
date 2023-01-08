@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Label, TextInput, Button, Toast } from "flowbite-react";
 import axios from "axios";
-// import { HiCheck } from "tailwindcss";
 
 const API = process.env.REACT_APP_API_URL;
 

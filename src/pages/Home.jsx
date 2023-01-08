@@ -7,14 +7,21 @@ import { Spinner } from "flowbite-react";
 const API = process.env.REACT_APP_API_URL;
 export default function Home() {
   const { data, error, loading } = useFetch(API);
-
+  const total = data ? data.reduce((a, b) => a + b.amount, 0) : 0;
   console.log(data);
 
   return (
     <div className="home mt-5 p-5">
       <div className="relative overflow-x-auto max-w-7xl mx-auto">
-        <h1 className="text-3xl text-right mr-5 mb-10 dark:text-white">
-          Balance: ${data ? data.reduce((a, b) => a + b.amount, 0) : 0}{" "}
+        <h1 className={`text-3xl text-right mr-5 mb-10 dark:text-white`}>
+          Balance:{" "}
+          <span
+            className={`${
+              total < 0 ? "text-red-500" : total >= 1000 ? "text-green-600" : ""
+            }`}
+          >
+            {total < 0 ? "-$" + total.toString().slice(1) : "$" + total}
+          </span>
         </h1>
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-900 dark:text-gray-100 ">
@@ -49,10 +56,7 @@ export default function Home() {
                   >
                     {t.date}
                   </th>
-                  <td
-                    className="px-6 py-4 underline decoration-solid
-"
-                  >
+                  <td className="px-6 py-4 underline decoration-solid">
                     <Link to={`/transactions/${i}`}>{t.name}</Link>
                   </td>
                   <td className="px-6 py-4">{t.category}</td>
