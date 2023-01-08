@@ -25,8 +25,8 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
-        <div className="container flex flex-wrap items-center justify-between mx-auto">
+      <nav className=" bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+        <div className="max-w-7xl container flex flex-wrap items-center justify-between mx-auto">
           <Link
             to="/"
             className="flex items-center dark:bg-gray-300 dark:p-2 rounded"
